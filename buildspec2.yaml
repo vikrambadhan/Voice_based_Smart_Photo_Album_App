@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo "install step"
+  pre_build:
+    commands:
+      - echo "pre_build step"
+  build:
+    commands:
+      - aws s3 sync ./Website/ "s3://codepipeline121"
+  post_build:
+    commands:
+      - echo "post_build step"
